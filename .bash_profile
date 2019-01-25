@@ -1,6 +1,5 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 #   ENVIRONMENT CONFIGURATION
-
 #   ------------------------------
         source "`brew --prefix`/etc/grc.bashrc"    #Colorize logfiles and command output - brew install grc
 
@@ -9,6 +8,9 @@
 #   ------------------------------------------------------------
     export PATH="$PATH:/usr/local/bin"
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" #brew install coreutils
+
+#Define UserNames:
+Username=''
 
 #   Set Defaults
 #   ------------------------------------------------------------
@@ -61,13 +63,13 @@
         alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
         alias subl='sublime'  # edit: Opens any file in sublime editor ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime
         trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
-        #alias ssh='ssh $1 -l megalithe'                           # ssh to host without having to specify your username ssh hostname.domain.___
+        #alias ssh='ssh $1 -l $Username'                           # ssh to host without having to specify your username ssh hostname.domain.___
         alias ~="cd ~"                              # ~:            Go Home
         alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
-        #alias scpkey='scp authorized_keys megalithe@$:~/.ssh/'    # scp authorized key to remote hosts .ssh directory
+        #alias scpkey='scp authorized_keys $Username@$:~/.ssh/'    # scp authorized key to remote hosts .ssh directory
         alias tar='gtar'
         alias top='htop'                                           # Replace top with htop download via brew install htop....
-
+        alias p='ping 8.8.8.8'
 
 #   -------------------------------
 #   FILE AND FOLDER MANAGEMENT
